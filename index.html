@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeriLabs — Building apps for freedom</title>
+<meta name="description" content="I print merch for money and build apps for freedom. A screen printer from Lithuania shipping iOS apps with AI. Zero coding experience. $0 to $10K MRR journey.">
+<meta property="og:title" content="NeriLabs — Building apps for freedom">
+<meta property="og:description" content="A screen printer from Lithuania building iOS apps with AI. Zero coding experience. Following the journey from $0 to $10K MRR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nerilabs.app">
+<meta property="og:image" content="https://nerilabs.github.io/nerilabs.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@neritamo_">
+<meta name="twitter:title" content="NeriLabs — Building apps for freedom">
+<meta name="twitter:description" content="A screen printer from Lithuania building iOS apps with AI. Zero coding experience. Following the journey from $0 to $10K MRR.">
+<meta name="twitter:image" content="https://nerilabs.github.io/nerilabs.app/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --black: #0a0a0a;
+    --white: #fafafa;
+    --gray: #888;
+    --light-gray: #e5e5e5;
+    --green: #22c55e;
+  }
+  
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* NAV */
+  nav {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--black);
+    text-decoration: none;
+  }
+  
+  .logo span {
+    color: var(--gray);
+    font-weight: 400;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .nav-link:hover { color: var(--black); }
+  
+  /* BRAND */
+  .brand {
+    padding: 80px 0 0;
+    text-align: center;
+  }
+  
+  .brand-name {
+    font-size: clamp(72px, 12vw, 120px);
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 1;
+    color: var(--black);
+  }
+  
+  .brand-tagline {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gray);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  
+  /* HERO */
+  .hero {
+    padding: 80px 0 64px;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  
+  .hero h1 .highlight {
+    color: var(--gray);
+  }
+  
+  .hero-text {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0 auto 32px;
+  }
+  
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+  
+  /* CTA */
+  .cta-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 16px 32px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  
+  .cta-button:hover {
+    background: #333;
+    transform: translateY(-1px);
+  }
+  
+  /* MISSION */
+  .mission {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .section-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+  
+  .mission-text {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .mission-text em {
+    font-style: italic;
+    color: var(--gray);
+  }
+  
+  /* APPS */
+  .apps {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .app-card {
+    border: 1px solid var(--light-gray);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: var(--black);
+    text-align: left;
+    background: var(--white);
+  }
+  
+  .app-card:hover {
+    border-color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  
+  .app-info h3 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    color: var(--black);
+  }
+  
+  .app-info p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  
+  .app-status {
+    flex-shrink: 0;
+    text-align: right;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .status-live {
+    background: var(--green);
+    color: var(--white);
+  }
+  
+  .status-building {
+    background: #f0f0f0;
+    color: var(--gray);
+  }
+  
+  .status-soon {
+    background: transparent;
+    color: #ccc;
+    border: 1px solid var(--light-gray);
+  }
+  
+  .app-revenue {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 8px;
+  }
+  
+  /* HEADSHOT */
+  .story-photo {
+    margin-bottom: 32px;
+  }
+  
+  .headshot {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--light-gray);
+  }
+  
+  /* STORY */
+  .story {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .story-content {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .story-content p {
+    margin-bottom: 20px;
+  }
+  
+  .story-content strong {
+    color: var(--black);
+    font-weight: 700;
+  }
+  
+  /* LINKS */
+  .links {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  
+  .link-card:hover {
+    border-color: var(--black);
+    background: var(--black);
+    color: var(--white);
+  }
+  
+  .link-card .arrow {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .link-card:hover .arrow {
+    opacity: 1;
+  }
+  
+  /* FOOTER */
+  footer {
+    padding: 48px 0;
+    text-align: center;
+  }
+  
+  .footer-mission {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  
+  .footer-sub {
+    font-size: 14px;
+    color: var(--gray);
+  }
+  
+  .footer-handle {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: none;
+    margin-top: 12px;
+    transition: color 0.2s;
+  }
+  
+  .footer-handle:hover { color: var(--black); }
+  
+  .footer-updated {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 12px;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 0 40px; }
+    .hero-stats { gap: 24px; }
+    .app-card { 
+      flex-direction: column; 
+      align-items: flex-start;
+      padding: 28px;
+    }
+    .app-status { text-align: left; }
+    .links-grid { grid-template-columns: 1fr; }
+    .mission, .apps, .story, .links { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <section class="brand">
+    <div class="brand-name">NeriLabs</div>
+    <div class="brand-tagline">Money is nice, but freedom is priceless</div>
+  </section>
+
+  <section class="hero">
+    <h1>I print merch for money.<br><span class="highlight">I build apps for freedom.</span></h1>
+    <p class="hero-text">
+      Screen printer from Lithuania. Zero coding experience. Building iOS apps with AI and documenting the entire journey — real numbers, real failures, no guru nonsense.
+    </p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">$0</div>
+        <div class="stat-label">MRR (so far)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">1</div>
+        <div class="stat-label">App shipped</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Lines of code written by me</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">542</div>
+        <div class="stat-label">X followers</div>
+      </div>
+    </div>
+    <a href="https://x.com/neritamo_" target="_blank" class="cta-button">Follow the journey on 𝕏 →</a>
+  </section>
+
+  <section class="mission">
+    <div class="section-tag">The mission</div>
+    <p class="mission-text">
+      Go from $0 to $10K monthly recurring revenue by building a portfolio of simple, useful iOS apps — using AI as my developer, screen printing as my funding, and radical transparency as my marketing. <em>Director, not coder.</em>
+    </p>
+  </section>
+
+  <section class="apps">
+    <div class="section-tag">Apps</div>
+    
+    <a href="https://apps.apple.com/us/app/tipjar-tip-shift-tracker/id6759197318" class="app-card" target="_blank">
+      <div class="app-info">
+        <h3>TipJar</h3>
+        <p>Tip & shift tracker for service workers. Log tips, track earnings, set income goals. Built in 2 weeks with Claude.</p>
+      </div>
+      <div class="app-status">
+        <span class="status-badge status-live">LIVE</span>
+        <div class="app-revenue">Revenue: $0</div>
+      </div>
+    </a>
+
+    <div class="app-card" style="cursor: default;">
+      <div class="app-info">
+        <h3>QuickBill</h3>
+        <p>Send a professional invoice in 30 seconds. Dead simple invoice maker for freelancers and small businesses.</p>
+      </div>
+      <div class="app-status">
+        <span class="status-badge status-building">BUILDING</span>
+        <div class="app-revenue">Starting Week 3</div>
+      </div>
+    </div>
+
+    <div class="app-card" style="cursor: default;">
+      <div class="app-info">
+        <h3>App #3</h3>
+        <p>TBD. Picking the next idea based on App Store keyword research and what I learn from the first two.</p>
+      </div>
+      <div class="app-status">
+        <span class="status-badge status-soon">SOON</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="section-tag">The story</div>
+    <div class="story-photo">
+      <img src="data:image/jpeg;base64,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" alt="Neri - screen printer turned app builder" class="headshot">
+    </div>
+    <div class="story-content">
+      <p>
+        <strong>I've been printing t-shirts and merch for 10+ years in Lithuania.</strong> Good money. Stable clients. But every euro comes from me physically showing up. No leverage. No scale. No freedom.
+      </p>
+      <p>
+        In February 2026, I opened Xcode for the first time in my life. I had no idea what Swift was. No idea what an API is. No idea how the App Store even works behind the scenes.
+      </p>
+      <p>
+        <strong>Two weeks later, my app was live on the App Store.</strong> Not because I learned to code — because I learned to direct AI. I described what I wanted in plain English, Claude wrote the code, and I copy-pasted it into Xcode. When it broke, I screenshotted the error and sent it back. Repeat for 14 days.
+      </p>
+      <p>
+        The app makes $0 right now. I'm building in public, sharing everything — the wins, the embarrassing metrics, the failures that are definitely coming. No filters. No guru energy. Just a screen printer who thinks the gap between "has an idea" and "shipped it" just got a lot smaller.
+      </p>
+      <p>
+        <strong>The goal is $10K MRR from a portfolio of 5-10 simple apps.</strong> The reality is I'll probably fail at most of them. But I'll document every step so others can learn from it — whether I succeed or not.
+      </p>
+    </div>
+  </section>
+
+  <section class="links">
+    <div class="section-tag">Find me everywhere</div>
+    <div class="links-grid">
+      <a href="https://x.com/neritamo_" class="link-card" target="_blank">
+        𝕏 Twitter / X
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://apps.apple.com/us/developer/nerijus-tamosauskas/id1877364163" class="link-card" target="_blank">
+        📱 App Store
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://medium.com/@neritamo" class="link-card" target="_blank">
+        ✍️ Medium
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-mission">Freedom to be yourself 🧭</div>
+    <div class="footer-sub">NeriLabs — Klaipeda, Lithuania</div>
+    <a href="https://x.com/neritamo_" class="footer-handle" target="_blank">@neritamo_</a>
+    <div class="footer-updated">Last updated: March 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
