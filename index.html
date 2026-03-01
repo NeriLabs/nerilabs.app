@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NeriLabs — Building apps for freedom</title>
 <meta name="description" content="I print merch for money and build apps for freedom. A screen printer from Lithuania shipping iOS apps with AI. Zero coding experience. $0 to $10K MRR journey.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a0a0a'/><text x='16' y='24' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='22' fill='%23fafafa'>N</text></svg>">
 <meta property="og:title" content="NeriLabs — Building apps for freedom">
 <meta property="og:description" content="A screen printer from Lithuania building iOS apps with AI. Zero coding experience. Following the journey from $0 to $10K MRR.">
 <meta property="og:type" content="website">
@@ -168,6 +169,65 @@
     transform: translateY(-1px);
   }
   
+  /* EMAIL CAPTURE */
+  .email-capture {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .email-heading {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  
+  .email-subtext {
+    font-size: 15px;
+    color: var(--gray);
+    margin-bottom: 24px;
+  }
+  
+  .email-form {
+    display: flex;
+    gap: 8px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  
+  .email-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid var(--light-gray);
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .email-input:focus {
+    border-color: var(--black);
+  }
+  
+  .email-button {
+    padding: 14px 28px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .email-button:hover {
+    background: #333;
+  }
+  
   /* MISSION */
   .mission {
     padding: 64px 0;
@@ -197,6 +257,70 @@
     color: var(--gray);
   }
   
+  /* TIMELINE */
+  .timeline {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--light-gray);
+    text-align: center;
+  }
+  
+  .timeline-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+  }
+  
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--light-gray);
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--light-gray);
+    background: var(--white);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-dot.active {
+    border-color: var(--green);
+    background: var(--green);
+  }
+  
+  .timeline-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray);
+    min-width: 50px;
+  }
+  
+  .timeline-event {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black);
+  }
+
   /* APPS */
   .apps {
     padding: 64px 0;
@@ -272,6 +396,14 @@
   .app-revenue {
     font-size: 13px;
     color: var(--gray);
+    margin-top: 8px;
+  }
+  
+  .app-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
     margin-top: 8px;
   }
   
@@ -401,7 +533,9 @@
     }
     .app-status { text-align: left; }
     .links-grid { grid-template-columns: 1fr; }
-    .mission, .apps, .story, .links { padding: 48px 0; }
+    .mission, .apps, .story, .links, .timeline, .email-capture { padding: 48px 0; }
+    .email-form { flex-direction: column; }
+    .email-button { width: 100%; }
   }
 </style>
 </head>
@@ -447,6 +581,54 @@
     </p>
   </section>
 
+  <section class="timeline">
+    <div class="section-tag">The journey so far</div>
+    <div class="timeline-track">
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">Feb 14</div>
+        <div class="timeline-event">Opened Xcode for the first time</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">Feb 17</div>
+        <div class="timeline-event">Started building in public on X</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">Feb 28</div>
+        <div class="timeline-event">TipJar live on App Store</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-date">Mar 1</div>
+        <div class="timeline-event">nerilabs.app launched</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Mar 3</div>
+        <div class="timeline-event">Start building QuickBill</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">???</div>
+        <div class="timeline-event">First dollar earned</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-capture">
+    <div class="email-heading">Get weekly updates from the journey</div>
+    <div class="email-subtext">Real numbers. Real failures. No spam. No guru energy.</div>
+    <form action="https://formsubmit.co/n.tamosauskas@gmail.com" method="POST" class="email-form">
+      <input type="hidden" name="_subject" value="New NeriLabs subscriber!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://nerilabs.app">
+      <input type="email" name="email" placeholder="your@email.com" required class="email-input">
+      <button type="submit" class="email-button">Subscribe</button>
+    </form>
+  </section>
+
   <section class="apps">
     <div class="section-tag">Apps</div>
     
@@ -454,6 +636,7 @@
       <div class="app-info">
         <h3>TipJar</h3>
         <p>Tip & shift tracker for service workers. Log tips, track earnings, set income goals. Built in 2 weeks with Claude.</p>
+        <span class="app-link">Download on App Store →</span>
       </div>
       <div class="app-status">
         <span class="status-badge status-live">LIVE</span>
